@@ -1,0 +1,16 @@
+---
+import SectionShell from "../components/common/SectionShell.astro";
+import { roadmap } from "../content/bandadas";
+---
+
+<SectionShell id="proceso" eyebrow="Roadmap" title="De la idea a una obra que deja huella." theme="dark">
+  <ol class="process-grid grid gap-px border border-white/25 bg-white/25 sm:grid-cols-2 lg:grid-cols-3">
+    {roadmap.map((item, index) => (
+      <li class:list={["min-h-64 p-7 md:p-9", index === 4 ? "bg-orange text-ink" : index === 5 ? "bg-electric" : "bg-ink"]}>
+        <p class:list={["text-5xl font-black tracking-[-0.06em]", index === 4 ? "text-ink/35" : "text-white/25"]}>{item.step}</p>
+        <h3 class="mt-10 text-2xl font-black">{item.title}</h3>
+        <p class:list={["mt-3 leading-relaxed", index === 4 ? "text-ink/75" : "text-white/65"]}>{item.text}</p>
+      </li>
+    ))}
+  </ol>
+</SectionShell>

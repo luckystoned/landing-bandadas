@@ -1,0 +1,27 @@
+---
+import Footer from "../components/common/Footer.astro";
+import Header from "../components/common/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutFaq from "../sections/AboutFaq.astro";
+import Capabilities from "../sections/Capabilities.astro";
+import Cases from "../sections/Cases.astro";
+import FinalCta from "../sections/FinalCta.astro";
+import Hero from "../sections/Hero.astro";
+import ProblemSolution from "../sections/ProblemSolution.astro";
+import Process from "../sections/Process.astro";
+import { pageSchemas } from "../seo/structuredData";
+---
+
+<BaseLayout schemas={pageSchemas}>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <ProblemSolution />
+    <Capabilities />
+    <Process />
+    <Cases />
+    <AboutFaq />
+    <FinalCta />
+  </main>
+  <Footer />
+</BaseLayout>

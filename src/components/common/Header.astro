@@ -1,0 +1,27 @@
+---
+import { links } from "../../content/bandadas";
+import { navItems } from "../../seo/metadata";
+import ButtonLink from "../ui/ButtonLink.astro";
+---
+
+<header class="site-header sticky top-0 z-40 border-b border-ink/15 bg-canvas/95 px-5 py-3 backdrop-blur md:px-10 lg:px-16">
+  <div class="mx-auto flex max-w-content items-center justify-between gap-5">
+    <a href="/" class="inline-flex" aria-label="Bandadas, inicio">
+      <img
+        class="h-[1.15rem] w-auto brightness-0 md:h-[1.35rem]"
+        src="/assets/images/logo-bandadas.png"
+        width="1196"
+        height="137"
+        alt="Bandadas"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-6 text-sm font-semibold lg:flex" aria-label="Navegación principal">
+      {navItems.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <ButtonLink href={links.schedule.href} event={links.schedule.event} label={links.schedule.label}>
+      <span class="hidden sm:inline">Agendar una reunión</span><span class="sm:hidden">Agendar</span>
+    </ButtonLink>
+  </div>
+</header>

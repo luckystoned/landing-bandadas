@@ -1,0 +1,20 @@
+---
+import ButtonLink from "../components/ui/ButtonLink.astro";
+import { links, site } from "../content/bandadas";
+---
+
+<section id="contacto" class="relative overflow-hidden bg-orange px-5 py-20 text-ink md:px-10 md:py-28 lg:px-16 lg:py-32" aria-labelledby="final-title">
+  <div class="cta-pattern" aria-hidden="true"></div>
+  <div class="relative z-10 mx-auto max-w-content">
+    <p class="section-eyebrow">Hablemos</p>
+    <h2 id="final-title" class="mt-8 max-w-6xl text-[clamp(3.5rem,8vw,8rem)] font-black leading-[0.88] tracking-[-0.075em]">Hagamos una convocatoria a la medida de tu desarrollo.</h2>
+    <div class="mt-12 flex flex-col items-start justify-between gap-8 border-t border-ink pt-8 md:flex-row md:items-end">
+      <ButtonLink href={links.schedule.href} event={links.schedule.event} label={links.schedule.label}>Agendar una reunión <span aria-hidden="true">↗</span></ButtonLink>
+      <div class="text-sm leading-relaxed">
+        {site.emails.map((email) => (
+          <a class="block font-semibold underline underline-offset-4" href={`mailto:${email}`} data-track-event="contact_email" data-track-label={email}>{email}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

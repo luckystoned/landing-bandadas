@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  class?: string;
+  theme?: "light" | "dark" | "blue";
+}
+
+const { id, eyebrow, title, class: className = "", theme = "light" } = Astro.props;
+const themes = {
+  light: "bg-canvas text-ink",
+  dark: "bg-ink text-white",
+  blue: "bg-electric text-white"
+};
+---
+
+<section id={id} class:list={["section-shell px-5 py-20 md:px-10 md:py-28 lg:px-16 lg:py-32", themes[theme], className]}>
+  <div class="mx-auto max-w-content">
+    {(eyebrow || title) && (
+      <header class="mb-12 grid gap-5 lg:mb-16 lg:grid-cols-[15rem_1fr]">
+        {eyebrow && <p class:list={["section-eyebrow", theme !== "light" && "text-current opacity-65"]}>{eyebrow}</p>}
+        {title && <h2 class="section-title">{title}</h2>}
+      </header>
+    )}
+    <slot />
+  </div>
+</section>

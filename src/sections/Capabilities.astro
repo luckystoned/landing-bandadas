@@ -1,0 +1,17 @@
+---
+import SectionShell from "../components/common/SectionShell.astro";
+import { capabilities } from "../content/bandadas";
+---
+
+<SectionShell id="diferenciales" eyebrow="¿Por qué Bandadas?" title="Cultura, comunidad y tecnología en un mismo equipo.">
+  <div class="grid gap-5 lg:grid-cols-3">
+    {capabilities.map((item, index) => (
+      <article class:list={["capability-card min-h-[30rem] overflow-hidden border border-ink p-7 md:p-9", index === 1 && "bg-pink", index === 2 && "bg-ink text-white"]}>
+        <p class:list={["text-sm font-black uppercase tracking-[0.14em]", index === 2 ? "text-white/60" : "text-graphite"]}>{item.label}</p>
+        <p class="mt-16 text-[clamp(3rem,5vw,5.5rem)] font-black leading-none tracking-[-0.07em]">{item.metric}</p>
+        <h3 class="mt-3 text-2xl font-bold tracking-[-0.03em]">{item.title}</h3>
+        <p class:list={["mt-8 max-w-sm leading-relaxed", index === 2 ? "text-white/70" : "text-graphite"]}>{item.text}</p>
+      </article>
+    ))}
+  </div>
+</SectionShell>

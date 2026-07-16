@@ -1,0 +1,22 @@
+---
+import ButtonLink from "../components/ui/ButtonLink.astro";
+import { hero, links } from "../content/bandadas";
+---
+
+<section class="hero-grid relative isolate overflow-hidden bg-ink px-5 py-16 text-white md:px-10 md:py-24 lg:min-h-[calc(100svh-73px)] lg:px-16 lg:py-20" aria-labelledby="hero-title">
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="relative z-10 mx-auto flex min-h-[36rem] max-w-content flex-col justify-between gap-16 lg:min-h-[calc(100svh-12rem)]">
+    <p class="max-w-xs text-xs font-bold uppercase tracking-[0.16em] text-white/65">{hero.eyebrow}</p>
+    <div class="grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)]">
+      <h1 id="hero-title" class="max-w-5xl text-[clamp(3.35rem,7.1vw,7.6rem)] font-black leading-[0.86] tracking-[-0.075em]">
+        Premios de <span class="highlight-pink">arte</span> que valorizan tu activo y <span class="highlight-blue">posicionan tu marca.</span>
+      </h1>
+      <div class="pb-2">
+        <p class="text-lg leading-relaxed text-white/75 md:text-xl">{hero.text}</p>
+        <div class="mt-8">
+          <ButtonLink href={links.schedule.href} event={links.schedule.event} label={links.schedule.label} variant="secondary">Agendar una reunión <span aria-hidden="true">↗</span></ButtonLink>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

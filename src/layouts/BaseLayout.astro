@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import { metadata } from "../seo/metadata";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  schemas?: unknown[];
+}
+
+const {
+  title = metadata.title,
+  description = metadata.description,
+  canonical = metadata.canonical,
+  ogImage = metadata.ogImage,
+  schemas = []
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "https://bandadas.com";
+const canonicalUrl = new URL(canonical, `${siteUrl}/`).toString();
+const ogImageUrl = new URL(ogImage, `${siteUrl}/`).toString();
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={metadata.themeColor} />
+    <meta name="application-name" content={metadata.siteName} />
+    <meta name="author" content={metadata.author} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-AR" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={metadata.siteName} />
+    <meta property="og:locale" content={metadata.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={metadata.ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@_bandadas" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={metadata.ogImageAlt} />
+    {metadata.keywords.length > 0 && (
+      <meta name="keywords" content={metadata.keywords.join(", ")} />
+    )}
+    {schemas.map((schema) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </head>
+  <body class="min-h-screen antialiased">
+    <a
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-3 focus:text-ink"
+      href="#contenido"
+    >
+      Saltar al contenido
+    </a>
+    <slot />
+    <script is:inline>
+      document.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target.closest("[data-track-event]") : null;
+        if (!target) return;
+
+        const name = target.getAttribute("data-track-event");
+        const label = target.getAttribute("data-track-label") ?? target.textContent?.trim();
+        const detail = { event: name, label, href: target.getAttribute("href") };
+
+        window.dispatchEvent(new CustomEvent("bandadas:track", { detail }));
+        if (Array.isArray(window["dataLayer"])) {
+          window["dataLayer"].push({ event: name, event_label: label });
+        }
+      });
+    </script>
+  </body>
+</html>

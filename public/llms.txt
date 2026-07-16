@@ -1,0 +1,27 @@
+# Bandadas — Premios de arte para desarrollos inmobiliarios
+
+> Bandadas diseña y gestiona premios de arte a medida para valorizar activos inmobiliarios, diferenciar marcas y conectar desarrollos con el sistema cultural.
+
+Canonical URL: https://bandadas.com/
+Language: es-AR
+Audience: desarrolladoras inmobiliarias en Argentina
+Contact: florenciafabeni@bandadas.com.ar, ignaciounrrein@bandadas.com.ar, lucasolini@bandadas.com.ar
+
+## Servicio
+
+Bandadas gestiona el proceso completo de una convocatoria: diseño, bases, lanzamiento, difusión, postulaciones, soporte, jurado, evaluación, selección, producción y activación de la obra. Su plataforma centraliza formularios, evaluación y métricas de rendimiento.
+
+## Diferenciales
+
+- Comunidad de más de 30.000 artistas.
+- Equipo de gestión cultural, marketing y comunicación.
+- Software propio para administrar convocatorias de punta a punta.
+- Experiencia propia: Premio GES a las Artes 2026, actualmente en curso.
+
+## Secciones
+
+- Solución: https://bandadas.com/#solucion
+- Proceso: https://bandadas.com/#proceso
+- Caso GES: https://bandadas.com/#caso-ges
+- Equipo y avales: https://bandadas.com/#nosotros
+- Contacto: https://bandadas.com/#contacto

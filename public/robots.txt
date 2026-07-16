@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bandadas.com/sitemap-index.xml
+
+# LLMs.txt: https://bandadas.com/llms.txt

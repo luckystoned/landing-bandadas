@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# astro content
+.astro/
+.cache/
+*.tsbuildinfo
+
+# environment files
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+
+# debug and logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# testing
+coverage/
+
+# system and editor
+.DS_Store
+*.pem
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# hosting
+.vercel
+.netlify
