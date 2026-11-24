@@ -116,10 +116,25 @@ export const roadmap = [
 ];
 
 export const gesCase = {
-  status: "Caso Bandadas · En curso",
+  status: "Caso de éxito · Convocatoria finalizada",
   title: "Premio GES a las Artes 2026",
-  text: "Una convocatoria nacional para seleccionar una obra inédita y permanente concebida para el hall central de Palacio Molina. Bandadas gestiona la inscripción, los materiales de soporte, la difusión y el proceso de postulación.",
-  facts: ["Convocatoria nacional", "Sitio específico", "Gestión tecnológica", "Producción y comunicación"]
+  text: "Arte contemporáneo y patrimonio, conectados por una convocatoria nacional para el hall central de Palacio Molina. Bandadas coordinó el diseño de la convocatoria, la plataforma de postulación, la difusión, el soporte y el proceso de evaluación y selección.",
+  metrics: [
+    { value: "106", label: "postulaciones recibidas" },
+    { value: "13", label: "jurisdicciones argentinas representadas" },
+    { value: "5", label: "jurados en la evaluación" },
+    { value: "100%", label: "de la matriz de evaluación completa" }
+  ],
+  winner: "Agustina Woodgate",
+  brandTitle: "Un desarrollo con una historia cultural propia.",
+  brandText: "El premio vinculó a GES y Palacio Molina con el arte contemporáneo y el patrimonio a través de 106 propuestas para un sitio específico. Una base concreta de proyectos y contenidos para su comunicación institucional.",
+  press: {
+    value: "2",
+    label: "medios culturales con presencia editorial verificada",
+    text: "Arte al Día y Acromática difundieron la convocatoria: presencia de GES y Palacio Molina en publicaciones de la escena cultural."
+  },
+  result: "Cuatro finalistas y una ganadora para una intervención concebida para Palacio Molina.",
+  nextStep: "Desarrollo de la obra previsto para 2027."
 };
 
 export const references = [
